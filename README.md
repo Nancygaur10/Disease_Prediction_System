@@ -59,26 +59,3 @@ Visit:
 
 This project includes a trained **Gradient Boosting Classifier**, which was trained on a dataset of symptoms and diseases.
 The ML model file is loaded inside Django views and predicts output based on user symptoms.
-
-## 📁 Project Structure
-
-project/
-│── manage.py
-│── db.sqlite3
-│
-├── my_app/
-│   ├── views.py
-│   ├── models.py
-│   ├── best_model.pkl
-│   ├── label_encoder.pkl
-│
-│   ├── templates/
-│   │    ├── index.html
-│   │    ├── parent.html
-│   │    ├── history.html
-│   │    ├── prediction_result.html
-│   │    └── prediction.html
-│
-│   └── static/
-│        ├── css/
-│        └── images/
