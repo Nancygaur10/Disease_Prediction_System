@@ -1,0 +1,67 @@
+{% extends "parent.html" %}
+{% load static %}
+{% block slider %}
+
+<div class="col-md-12 p-0 hero">
+<img src="{% static 'images/img.jpg' %}" height="350vh" width="100%" alt="">
+<div class="row">
+    <div class="col-md-8 form history-box">
+        <h2 class="text-center">Medical History</h2>
+        <table class="table table-bordered">
+            <tr>
+                <th>ID</th>
+                <th>Fever</th>
+                <th>Headache</th>
+                <th>Nausea</th>
+                <th>Vomiting</th>
+                <th>Fatigue</th>
+                <th>Joint Pain</th>
+                <th>Skin Rash</th>
+                <th>Cough</th>
+                <th>Weight Loss</th>
+                <th>Yellow Eyes</th>
+                <th>Prediction Result</th>
+            </tr>
+            {% for h in page_obj %}
+            <tr>
+                <td>{{h.id}}</td>
+                <td>{{h.fever}}</td>
+                <td>{{h.headache}}</td>
+                <td>{{h.nausea}}</td>
+                <td>{{h.vomiting}}</td>
+                <td>{{h.fatigue}}</td>
+                <td>{{h.joint_pain}}</td>
+                <td>{{h.skin_rash}}</td>
+                <td>{{h.cough}}</td>
+                <td>{{h.weight_loss}}</td>
+                <td>{{h.yellow_eyes}}</td>
+                <td>{{h.res}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div class="d-flex justify-content-center mt-3">
+            <nav>
+                <ul class="pagination">
+
+                    {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">← Previous</a>
+                    </li>
+                    {% endif %}
+
+                    {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next →</a>
+                    </li>
+                    {% endif %}
+
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- <div class="position-absolute top-50 p-4 translate-middle-y text-white">
+    
+</div> -->
+</div>
+{% endblock slider %}

@@ -1,0 +1,103 @@
+{% extends "parent.html" %}
+{% load static %}
+{% block slider %}
+
+<div class="col-md-12 p-0 hero">
+<img src="{% static 'images/img.jpg' %}" height="450vh" width="100%" alt="">
+
+<div class="row">
+<div class="col-md-8 form">
+    <h2 class="text-center">Disease Prediction</h2>
+    <form class="form-group" action="" method="post">
+    {% csrf_token %}
+        <table class="table table-bordered">
+            <tr>
+                <td>Fever</td>
+                <td>
+                    <select name="fever" class="form-select">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </td>
+                <td>Headache</td>
+                <td>
+                    <select name="headache" class="form-select">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Nausea</td>
+                <td>
+                    <select name="nausea" class="form-select">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </td>
+                <td>Vomiting</td>
+                <td>
+                    <select name="vomiting" class="form-select">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Fatigue</td>
+                <td>
+                    <select name="fatigue" class="form-select">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </td>
+                <td>Joint Pain</td>
+                <td>
+                    <select name="joint_pain" class="form-select">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Skin Rash</td>
+                <td>
+                    <select name="skin_rash" class="form-select">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </td>
+                <td>Cough</td>
+                <td>
+                    <select name="cough" class="form-select">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Weight Loss</td>
+                <td>
+                    <select name="weight_loss" class="form-select">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </td>
+                <td>Yellow Eyes</td>
+                <td>
+                    <select name="yellow_eyes" class="form-select">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-info btn-custom" type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+</div>
+</div>
+
+{% endblock slider %}

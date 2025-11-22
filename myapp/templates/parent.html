@@ -1,0 +1,116 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Disease Prediction System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <div class="container-fluid">
+
+      <!--NavBar starts-->
+      <div class="row">
+        <div class="col-md-12">
+          <nav class="navbar navbar-expand-lg bg-white">
+            <div class="container-fluid">
+              <a class="navbar-brand text-dark">Disease Prediction System</a>
+
+              <!-- Toggler button for Mobiles -->
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"     data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+      
+              <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/' %}active{% endif %}" aria-current="page" href="{% url 'index' %}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/prediction/' %}active{% endif %}" href="{% url 'prediction' %}">Disease Prediction</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/history/' %}active{% endif %}" href="{% url 'history' %}">Medical History</a>
+                  </li>
+                </ul>
+                <form class="d-flex align-items-center" role="search">
+                  <button class="btn btn-outline-dark" type="submit">Signup</button>
+                  <i class="fa-solid fa-user my-auto ms-2"></i>
+                </form>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <!-- NavBar ends -->
+
+      <!-- Slider starts -->
+      <div class="row">
+        {% block slider %}
+            
+        {% endblock slider%}
+      </div>
+      <!-- Slider ends -->
+
+      <!-- main body starts -->
+      <div class="row">
+        <div class="col-md-12 main_body">
+            <div class="row main-body-cards d-flex justify-content-evenly">
+                <div class="col-md-3">
+                    <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="bi bi-heart-pulse card-icon"></i>
+                        <h5 class="card-title text-center">Predict Your Health</h5>
+                        <p class="card-text">Get accurate predictions based on your medical history and stay ahead of potential health risks.</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="bi bi-graph-up card-icon"></i>
+                        <h5 class="card-title text-center">Personalized Insights</h5>
+                        <p class="card-text">Understand your unique health trends and recieve tips tailored just for you.</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                        <i class="bi bi-shield-lock card-icon"></i>
+                        <h5 class="card-title">Secure & Private</h5>
+                        <p class="card-text">Your medical data is fully protected and confidential, always.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- main body ends -->
+
+      <!-- footer starts -->
+      <div class="row">
+        <div class="col-md-2 text-center p-2">
+          <h6>Copyright &copy;</h6>
+        </div>
+
+        <div class="col-md-8 text-center p-2">
+          <h6>Privacy Policy / Terms of Service</h6>
+        </div>
+
+        <div class="col-md-2 text-center p-2">
+          <i class="fa-brands fa-facebook fa-lg text-dark"></i>
+          <i class="fa-brands fa-square-instagram fa-lg text-dark"></i>
+          <i class="fa-brands fa-youtube fa-lg text-dark"></i>
+        </div>
+      </div>
+      <!-- footer ends -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>

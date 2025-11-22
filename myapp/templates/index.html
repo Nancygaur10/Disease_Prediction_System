@@ -1,0 +1,14 @@
+{% extends "parent.html" %}
+{% load static %}
+{% block slider %}
+
+<div class="col-md-12 p-0 hero">
+<img src="{% static 'images/img.jpg' %}" height="350vh" width="100%" alt="">
+<div class="position-absolute top-50 p-4 translate-middle-y text-white">
+    <h1>Disease Prediction System</h1>
+    <button type="button" class="btn btn-info text-light my-3 rounded-pill">Get Started</button>
+    <button type="button" class="btn my-3 text-white rounded-pill">Learn More</button>
+</div>
+</div>
+
+{% endblock slider %}
