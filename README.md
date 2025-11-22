@@ -62,22 +62,23 @@ The ML model file is loaded inside Django views and predicts output based on use
 
 ## 📁 Project Structure
 
-/project
+project/
 │── manage.py
 │── db.sqlite3
-│── /templates
-│     ├── index.html
-│     ├── parent.html
-│     ├── prediction_result.html
-│     ├── prediction.html
-│     ├── history.html
-│── /static
-│     ├── /css
-│     ├     ├── style2.css
-│     ├── /images
-│     ├     ├── img.jpg
-│── /my_app
-│     ├── views.py
-│     ├── models.py
-│     ├── best_model.pkl
-│     ├── label_encoder.pkl
+│
+├── my_app/
+│   ├── views.py
+│   ├── models.py
+│   ├── best_model.pkl
+│   ├── label_encoder.pkl
+│
+│   ├── templates/
+│   │    ├── index.html
+│   │    ├── parent.html
+│   │    ├── history.html
+│   │    ├── prediction_result.html
+│   │    └── prediction.html
+│
+│   └── static/
+│        ├── css/
+│        └── images/
